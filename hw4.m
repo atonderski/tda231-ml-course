@@ -22,4 +22,13 @@ b = [0, 0, 0, 0, 0, 0]';
 Aeq = [1, 1, 1, -1, -1, -1];
 beq = 0;
 
-x = quadprog(H, f, -A, b, Aeq, beq);
+alpha = quadprog(H, f, -A, b, Aeq, beq);
+
+x1 = [2, 2];
+x2 = [4, 4];
+x3 = [4, 0];
+x4 = [0, 0];
+x5 = [2, 0];
+x6 = [0, 2];
+
+stuff = x1*alpha(1)*Aeq(1) + x2*alpha(2)*Aeq(2) + x3*alpha(3)*Aeq(3) + x4*alpha(4)*Aeq(4) + x5*alpha(5)*Aeq(5) + x6*alpha(6)*Aeq(6)
